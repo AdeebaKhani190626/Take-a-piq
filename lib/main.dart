@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF270f0a),
+          backgroundColor: Color(0xFF200f0a),
           leading: Builder(
             builder: (BuildContext context) {
               return IconButton(
@@ -28,8 +28,9 @@ class HomePage extends StatelessWidget {
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.brown, Colors.blue],
-              begin: Alignment.topCenter,
+              colors: [Color(0xFF200f0a), Color(0xFF4d1f10), Color(0xFF683e2b), Color(0xFF613525), Color(0xFF17383f)],
+              stops: [0.2, 0.3, 0.4, 0.5, 0.9],
+              begin: Alignment.topRight,
               end: Alignment.bottomCenter,
             ),
           ),
@@ -107,7 +108,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               // Search Bar
-              SizedBox(height: 20),
+              SizedBox(height: 30),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 13),
                 child: Material(
