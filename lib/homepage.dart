@@ -186,31 +186,39 @@ class HomePage extends StatelessWidget {
                 child: GridView.count(
                   crossAxisCount: 2,
                   padding: EdgeInsets.only(left:10, right: 10, top: 15, bottom: 15),
-                  childAspectRatio: 0.75,
+                  childAspectRatio: 0.70,
                   children: [
                     CardWidget(
                       image: 'assets/blueberry.jpg',
                       onSave: () {
                         // Save icon on tap callback
                       },
+                      text: 'Supplier Name',
+                      icon: Icons.account_circle_outlined,
                     ),
                     CardWidget(
                       image: 'assets/hand strawberry.jpg',
                       onSave: () {
                         // Save icon on tap callback
                       },
+                      text: 'Supplier Name',
+                      icon: Icons.account_circle_outlined,
                     ),
                     CardWidget(
                       image: 'assets/mango juice.jpg',
                       onSave: () {
                         // Save icon on tap callback
                       },
+                      text: 'Supplier Name',
+                      icon: Icons.account_circle_outlined,
                     ),
                     CardWidget(
                       image: 'assets/image4.jpg',
                       onSave: () {
                         // Save icon on tap callback
                       },
+                      text: 'Supplier Name',
+                      icon: Icons.account_circle_outlined,
                     ),
                     // Add more CardWidget as needed
                   ],

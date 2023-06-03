@@ -5,12 +5,16 @@ class CardWidget extends StatelessWidget {
   final VoidCallback onSave;
   final double width;
   final double height;
+  final IconData icon;
+  final String text;
 
   CardWidget({
     required this.image,
     required this.onSave,
     this.width = 200,
-    this.height = 450,
+    this.height = 220,
+    required this.icon,
+    required this.text,
   });
 
   @override
@@ -20,22 +24,28 @@ class CardWidget extends StatelessWidget {
       height: height,
       margin: EdgeInsets.all(5),
       child: Card(
+        color: Colors.transparent.withOpacity(0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
-          side: BorderSide(
-            color: Colors.grey,
-            width: 1,
-          ),
         ),
         child: Stack(
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                height: height,
-                width: width,
-                image,
-                fit: BoxFit.cover,
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 1,
+                ),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  image,
+                  height: height,
+                  width: width,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Positioned(
@@ -59,7 +69,7 @@ class CardWidget extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 10,
+              bottom: 50,
               left: 10,
               child: Text(
                 'Item Name',
@@ -71,7 +81,7 @@ class CardWidget extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 10,
+              bottom: 50,
               right: 10,
               child: Text(
                 'Price',
@@ -80,6 +90,28 @@ class CardWidget extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.lightGreen,
                 ),
+              ),
+            ),
+            Positioned(
+              bottom: 10,
+              left: 10,
+              child: Row(
+                children: [
+                  Icon(
+                    icon,
+                    color: Colors.white38,
+                    size: 20,
+                  ),
+                  SizedBox(width: 5),
+                  Text(
+                    text,
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w200,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
