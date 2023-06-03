@@ -162,23 +162,31 @@ class HomePage extends StatelessWidget {
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(15),
                   children: [
                     CardWidget(
-                      image: 'assets/image1.jpg',
+                      image: 'assets/blueberry.jpg',
                       onSave: () {
                         // Save icon on tap callback
                       },
-                      text1: 'Text 1',
-                      text2: 'Text 2',
                     ),
                     CardWidget(
-                      image: 'assets/image2.jpg',
+                      image: 'assets/hand strawberry.jpg',
                       onSave: () {
                         // Save icon on tap callback
                       },
-                      text1: 'Text 3',
-                      text2: 'Text 4',
+                    ),
+                    CardWidget(
+                      image: 'assets/mango juice.jpg',
+                      onSave: () {
+                        // Save icon on tap callback
+                      },
+                    ),
+                    CardWidget(
+                      image: 'assets/image4.jpg',
+                      onSave: () {
+                        // Save icon on tap callback
+                      },
                     ),
                     // Add more CardWidget as needed
                   ],
@@ -226,84 +234,87 @@ class RoundedButton extends StatelessWidget {
 class CardWidget extends StatelessWidget {
   final String image;
   final VoidCallback onSave;
-  final String text1;
-  final String text2;
+  final double width;
+  final double height;
 
   CardWidget({
     required this.image,
     required this.onSave,
-    required this.text1,
-    required this.text2,
+    this.width = 150,
+    this.height = 600,
   });
 
   @override
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.all(10),
-      child: Stack(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                child: Image.asset(
-                  image,
-                  fit: BoxFit.cover,
-                ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        side: BorderSide(
+          color: Colors.grey,
+          width: 1,
+        ),
+      ),
+      child: SizedBox(
+        width: width,
+        height: height,
+        child: Stack(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                image,
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.cover,
               ),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  text1,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+            ),
+            Positioned(
+              top: 10,
+              right: 10,
+              child: Container(
+                width: 30,
+                height: 30,
+                decoration: BoxDecoration(
+                  color: Colors.grey,
+                  shape: BoxShape.circle,
+                ),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.save_alt_outlined,
+                    color: Colors.white,
+                    size: 14,
                   ),
+                  onPressed: onSave,
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  text2,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey,
-                  ),
+            ),
+            Positioned(
+              bottom: 10,
+              left: 10,
+              child: Text(
+                'Item Name',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ],
-          ),
-          Positioned(
-            top: 10,
-            right: 10,
-            child: IconButton(
-              icon: Icon(Icons.save),
-              onPressed: onSave,
             ),
-          ),
-          Positioned(
-            bottom: 10,
-            left: 10,
-            child: Text(
-              'Bottom Left Text',
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.grey,
+            Positioned(
+              bottom: 10,
+              right: 10,
+              child: Text(
+                'Price',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.lightGreen,
+                ),
               ),
             ),
-          ),
-          Positioned(
-            bottom: 10,
-            right: 10,
-            child: Text(
-              'Bottom Right Text',
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.grey,
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
