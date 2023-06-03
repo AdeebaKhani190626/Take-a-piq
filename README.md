@@ -1,16 +1,6 @@
-# take_a_piq
+# Flutter: Take a piq
 
-A new Flutter project.
+Designing a responsive screen with dummy icons and images. The sample screen is given below:
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Homepage
+![Screenshot (424)](https://github.com/AdeebaKhani190626/Take-a-piq/assets/90544970/c39f94fc-15c3-4e19-bdca-84fd2cfc10e5)
