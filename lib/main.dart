@@ -162,7 +162,8 @@ class HomePage extends StatelessWidget {
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
-                  padding: EdgeInsets.all(15),
+                  padding: EdgeInsets.only(left:10, right: 10, top: 15, bottom: 15),
+                  childAspectRatio: 0.75,
                   children: [
                     CardWidget(
                       image: 'assets/blueberry.jpg',
@@ -240,32 +241,32 @@ class CardWidget extends StatelessWidget {
   CardWidget({
     required this.image,
     required this.onSave,
-    this.width = 150,
-    this.height = 600,
+    this.width = 200,
+    this.height = 450,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.all(10),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-        side: BorderSide(
-          color: Colors.grey,
-          width: 1,
+    return Container(
+      width: width,
+      height: height,
+      margin: EdgeInsets.all(5),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          side: BorderSide(
+            color: Colors.grey,
+            width: 1,
+          ),
         ),
-      ),
-      child: SizedBox(
-        width: width,
-        height: height,
         child: Stack(
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
+                height: height,
+                width: width,
                 image,
-                width: double.infinity,
-                height: double.infinity,
                 fit: BoxFit.cover,
               ),
             ),
