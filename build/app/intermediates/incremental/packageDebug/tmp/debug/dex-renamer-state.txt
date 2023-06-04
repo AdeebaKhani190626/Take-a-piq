@@ -1,0 +1,4 @@
+#Sun Jun 04 01:20:39 PKT 2023
+base.0=D\:\\Android Studio Applications\\take_a_piq\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
